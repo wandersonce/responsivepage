@@ -1,0 +1,378 @@
+@charset "utf-8";
+@import url("reset.css");
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #212121;
+
+}
+
+#body_div {
+    display: grid;
+    grid-template-areas: "header header header" "nav nav nav " "main main aside" "main main aside" "footer footer footer";
+    grid-template-columns: 0.5fr 0.5fr 150px;
+}
+
+header {
+    background-color: black;
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-position: 100% -500px;
+    overflow: hidden;
+    grid-area: header;
+    height: 250px;
+}
+
+header>div>h1 {
+    color: white;
+    position: relative;
+    margin-left: 30%;
+    margin-top: 5%;
+    font-size: 90px;
+    text-shadow: 3px 2px #FF9800;
+    font-family: 'Acme', sans-serif;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 680px;
+}
+
+nav {
+    text-align: center;
+    background: radial-gradient(circle at center, white 0, #FF7043 100%);
+    grid-area: nav;
+    height: 40px;
+}
+
+.fas,
+.hide_bt {
+    display: none;
+}
+
+.home_bt {
+    background-color: #212121;
+    color: white;
+    border: 1px solid black;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 20px;
+    display: inline-block;
+    margin-top: 6px;
+    padding: 4px;
+    transition: all 1s ease;
+    font-family: arial;
+    width: 150px;
+    -webkit-box-shadow: -4px -2px 7px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: -4px -2px 7px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: -4px -2px 7px 0px rgba(50, 50, 50, 0.75);
+}
+
+.home_bt:hover {
+    background-color: #424242;
+    border-radius: 20px;
+    font-size: 22px;
+    margin: 2px;
+    color: #FF7043;
+    width: 160px;
+}
+/*MAIN CONTENT*/
+
+main {
+    background-color: #424242;
+    grid-area: main;
+    padding: 10px;
+    color: white;
+   
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  }
+  
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+   
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+#img_av {
+    float: left;
+    width: 170px;
+    margin-right: 5px;
+}
+
+.div_sz {
+    max-width: 800px;
+}
+
+.about_movie {
+    border: 1px dotted white;
+    padding: 5px;
+}
+
+#avengers {
+    float: left;
+    border-style: double;
+    border-color: white;
+    border-width: 0px 2px 0px 0px ;
+    padding-right: 10px;   
+    padding-bottom: 10px;
+    transition: all 1s ease;
+}
+
+#avengers:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 0, 0);
+    font-size: 20px;
+}
+
+#thanos {
+    float: left;
+    transition: all 1s ease;
+    padding-bottom: 10px;
+}
+#thanos:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 0, 0);
+    font-size: 20px;
+}
+
+.links_ul {
+    color: #FF7043;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.5s ease;
+}
+.links_ul:hover {
+    background-color: rgba(255, 0, 0, 0.5);
+    color: white;
+}
+
+.img_fn {
+  width: 400px;
+
+}
+
+.img_fn:hover {
+    cursor: pointer;    
+}
+
+.img_fn:active {
+    width: 70%;
+    position: absolute;
+    left: 0;
+    top: 130%;   
+  }
+/* ******************************************* */
+
+footer {
+    background: radial-gradient(circle at center, white 0, #FF7043 100%);
+    grid-area: footer;
+    text-align: center;
+    color: black;
+}
+
+aside {
+    background-color: #424242;
+    grid-area: aside;
+    border: 1px solid white;
+}
+
+.resize_img {
+    width: 100%;
+}
+
+
+/* MEDIA RELATIVE */
+
+@media screen and (max-width: 640px) {
+    #body_div {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "header header" " nav     nav " "main     main" "aside   aside" "footer footer"
+    }
+    aside{
+        display: none;
+    }
+    .resize_img2 {
+        float: none;
+        width: 100%;
+    }
+    header>div>h1 {
+        color: white;
+        position: relative;
+        margin-left: 15%;
+        margin-top: 20%;
+        font-size: 50px;
+        text-shadow: 3px 2px #FF9800;
+        width: 380px;
+    }
+    .hide_bt {
+        display: inline;
+    }
+    .fas {
+        margin-top: 2px;
+        font-size: 35px;
+        color: black;
+        margin-left: 10px;
+    }
+    .fas:hover {
+        color: #FF7043;
+    }
+    .home_bt {
+        display: none;
+    }
+    main{
+        width: 100%;
+    }
+    #img_av {
+        margin-left: 15%;
+        width: 70%;
+        float: none;
+    }
+    .resp_pd{
+        margin: 10px;
+    }
+    .links_ul {
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
+        text-decoration: none;
+        border: 1px solid white;
+        padding: 5px;
+        background-color: red
+    
+    }
+    iframe {
+        width: 100%;
+    }
+
+    .img_fn{
+        width: 100%;
+    }
+    
+    .img_fn:active {
+        position: relative;            
+      }
+}
+    @media screen and (max-width: 400px) {
+        body{
+            width: 100%;
+        }
+
+        .resize_img2 {
+            float: none;
+            width: 100%;
+        }
+        header>div>h1 {
+            color: white;
+            position: relative;
+            margin-left: 15%;
+            margin-top: 30%;
+            font-size: 30px;
+            text-shadow: 3px 2px #FF9800;
+            width: 230px;
+        }
+        .hide_bt {
+            display: inline;
+        }
+        .fas {
+            margin-top: 2px;
+            font-size: 35px;
+            color: black;
+    
+        }
+        .fas:hover {
+            color: #FF7043;
+        }
+        main{
+            width: 100%;
+        }
+        #img_av {
+            margin-left: 15%;
+            width: 70%;
+            float: none;
+        }
+        .resp_pd{
+            margin: 10px;
+        }
+        .links_ul {
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            text-decoration: none;
+            border: 1px solid white;
+            padding: 5px;
+            background-color: red
+        
+        }
+        iframe {
+            width: 100%;
+        }
+
+        .img_fn{
+            width: 100%;
+        }
+        
+        .img_fn:active {
+            position: relative;            
+          }
+          aside{
+            display: none;
+        }
+    }
+        @media print {
+            * {
+                background:transparent !important;
+                color:#000 !important;
+                text-shadow:none !important;
+                filter:none !important;
+                -ms-filter:none !important;
+                }
+             
+    
+            a[href^="http"]:after {
+                content: " URL: (" attr(href) ") ";
+            }
+
+
+            nav,
+            aside,
+            header,
+            footer,
+            #trailer {
+                display: none;
+            }
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            img {
+                page-break-after: avoid;
+            }
+            section ~ section{
+                page-break-before:always;
+            }
+        }
